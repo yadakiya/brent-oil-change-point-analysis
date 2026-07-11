@@ -18,16 +18,29 @@ class EDAnalyzer:
     """
     Performs exploratory data analysis on oil price data.
     """
-    
+
     def __init__(self, df: pd.DataFrame):
         """
         Initialize EDAnalyzer with DataFrame.
-        
+
         Args:
             df: DataFrame containing oil price data
         """
-        self.df = df
+        self.df = df.copy()
         self.figures = {}
+
+        # Create rolling volatility if it doesn't already exist
+        if "log_return" in self.df.columns and "rolling_volatility" not in self.df.columns:
+            self.df["rolling_volatility"] = (
+                self.df["log_return"]
+                .rolling(window=30, min_periods=1)
+                .std()
+            )
+
+    def plot_time_series(self, save_path: str = None) -> None:
+        ...
+
+    
         
     def plot_time_series(self, save_path: str = None) -> None:
         """
