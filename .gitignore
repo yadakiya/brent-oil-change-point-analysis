@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb
+!notebooks/*.ipynb
+
+# Data
+data/raw/*.csv
+data/processed/*.csv
+!data/processed/events.csv
+
+# Dashboard
+dashboard/frontend/node_modules/
+dashboard/frontend/build/
+dashboard/backend/__pycache__/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+config/secrets.yaml
+
+# Results
+results/figures/*.png
+results/reports/*.pdf
+!results/reports/*.md
+
+# Logs
+logs/
+*.log

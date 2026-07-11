@@ -1,0 +1,41 @@
+# Brent Oil Analysis Configuration
+
+# Data settings
+data:
+  raw_path: "data/raw/brent_oil_prices.csv"
+  processed_path: "data/processed/"
+  events_path: "data/processed/events.csv"
+
+# Modeling settings
+model:
+  type: "single" # single, multiple
+  n_changepoints: 3
+  n_samples: 2000
+  n_tune: 1000
+  n_chains: 4
+  random_seed: 42
+  threshold: 0.7
+
+# Analysis settings
+analysis:
+  window_days: 30
+  event_window: 14
+  pre_window: 30
+  post_window: 30
+
+# Output settings
+output:
+  figures_dir: "results/figures/"
+  reports_dir: "results/reports/"
+  data_dir: "results/"
+
+# Dashboard settings
+dashboard:
+  host: "0.0.0.0"
+  port: 5000
+  debug: true
+
+# Logging settings
+logging:
+  level: "INFO"
+  file: "logs/analysis.log"
